@@ -8,12 +8,20 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
+import {Geolocation} from '@ionic-native/geolocation/ngx';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
+    IonicStorageModule.forRoot({
+      name: 'Mylocations',
+      driverOrder: ['indexeddb', 'sqlite', 'websql']
+    })
+  ],
+  providers: [Geolocation,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

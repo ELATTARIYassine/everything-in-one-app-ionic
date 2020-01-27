@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="onNewLocation()">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>locations</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-item *ngFor="let l of Locations">
+    <ion-label (click)="onDetailLocation(l)">{{ l.title }}</ion-label>
+    <ion-icon slot="end" name="trash" (click)="onRemove(l)"></ion-icon>
+  </ion-item>
+</ion-list>
+</ion-content>
