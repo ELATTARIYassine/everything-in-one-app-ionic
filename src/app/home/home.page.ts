@@ -12,7 +12,7 @@ export class HomePage {
   contact = {
     name     : "DISCORD",
     email    : "yassineattari64@gmail.com",
-    tel      : "0766773216",
+    tel      : "070000000",
     logo     : "assets/images/logo.png",
     location : "assets/images/location.png"
   }
